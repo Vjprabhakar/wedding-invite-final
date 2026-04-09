@@ -283,40 +283,46 @@ export default function Home() {
             </MaskedReveal>
           </motion.section>
 
+          {/* --- SCENE 3: RECEPTION --- */}
           <motion.section 
-            className="absolute inset-0 flex flex-col items-center justify-center px-6 z-10 w-full"
+            className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-6 z-10 w-full"
             style={{ opacity: opacity3, display: display3 }}
           >
             {/* The floating lights in the background */}
             <AmbientBokeh progress={scrollYProgress} start={0.46} end={0.72} />
 
-            <div className="relative w-full max-w-2xl text-center bg-stone-900/60 p-12 md:p-16 rounded-xl backdrop-blur-md">
+            {/* Reduced mobile padding from p-12 to py-8 px-4 */}
+            <div className="relative w-full max-w-2xl text-center bg-stone-900/60 py-8 px-4 md:p-16 rounded-xl backdrop-blur-md">
               
               {/* The SVG frame that draws itself around the card */}
               <AnimatedFrame progress={scrollYProgress} start={0.48} end={0.56} theme="dark" />
 
               <MaskedReveal progress={scrollYProgress} input={[0.48, 0.54]} output={[50, 0]}>
-                <p className="tracking-[0.2em] uppercase text-sm mb-4 text-amber-200/80">Join us for</p>
+                <p className="tracking-[0.2em] uppercase text-xs md:text-sm mb-2 md:mb-4 text-amber-200/80">Join us for</p>
               </MaskedReveal>
 
               <MaskedReveal progress={scrollYProgress} input={[0.50, 0.56]} output={[80, 0]}>
-                <h2 className="font-serif text-5xl md:text-6xl mb-8 text-amber-50 drop-shadow-md">
+                <h2 className="font-serif text-4xl md:text-6xl mb-4 md:mb-8 text-amber-50 drop-shadow-md">
                   The Reception
                 </h2>
               </MaskedReveal>
 
               <MaskedReveal progress={scrollYProgress} input={[0.52, 0.58]} output={[50, 0]}>
-                <div className="space-y-4 text-amber-50/90 mt-4 flex flex-col items-center w-full">
-                  <p className="text-lg leading-relaxed text-amber-100 font-light mb-6">
+                {/* Tighter spacing on mobile (space-y-2 instead of space-y-4) */}
+                <div className="space-y-2 md:space-y-4 text-amber-50/90 mt-2 md:mt-4 flex flex-col items-center w-full">
+                  <p className="text-sm md:text-lg leading-relaxed text-amber-100 font-light mb-3 md:mb-6">
                     A vibrant evening of music, dinner, and celebration to kick off the wedding festivities.
                   </p>
-                  <p className="font-medium text-xl text-amber-200">Saturday, June 06, 2026</p>
-                  <p className="text-lg">7:30 PM to 9:30 PM</p>
-                  <div className="w-12 h-px bg-amber-700/50 mx-auto my-6"></div>
-                  <p className="text-lg text-amber-100">Lakshmi Thirumana Nilayam</p>
-                  <p className="text-amber-200/60">26, Villupuram Main Rd, Villianur</p>
+                  <p className="font-medium text-lg md:text-xl text-amber-200">Saturday, June 06, 2026</p>
+                  <p className="text-sm md:text-lg">7:30 PM to 9:30 PM</p>
+                  <div className="w-8 md:w-12 h-px bg-amber-700/50 mx-auto my-3 md:my-6"></div>
+                  <p className="text-base md:text-lg text-amber-100">Lakshmi Thirumana Nilayam</p>
+                  <p className="text-xs md:text-base text-amber-200/60">26, Villupuram Main Rd, Villianur</p>
                   
-                  <LocationReveal theme="dark" />
+                  {/* The location card wrapper with smaller top margin */}
+                  <div className="mt-4 md:mt-8 w-full">
+                    <LocationReveal theme="dark" />
+                  </div>
                 </div>
               </MaskedReveal>
             </div>
@@ -324,41 +330,42 @@ export default function Home() {
 
           {/* --- SCENE 4: MUHURTHAM --- */}
           <motion.section 
-            className="absolute inset-0 flex flex-col items-center justify-center px-6 z-10 w-full"
+            className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-6 z-10 w-full"
             style={{ opacity: opacity4, display: display4 }}
           >
             {/* The floating lights in the background */}
             <AmbientBokeh progress={scrollYProgress} start={0.72} end={1} />
 
-            {/* THE UPGRADE: Luxurious Glassmorphism Container */}
-            <div className="relative w-full max-w-2xl text-center bg-white/5 p-12 md:p-16 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] backdrop-blur-2xl border border-white/10">
+            {/* Luxurious Glassmorphism Container with Mobile Padding */}
+            <div className="relative w-full max-w-2xl text-center bg-white/5 py-8 px-4 md:p-16 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] backdrop-blur-2xl border border-white/10">
               
               {/* The SVG frame matched to the dark glass theme */}
               <AnimatedFrame progress={scrollYProgress} start={0.74} end={0.82} theme="dark" />
 
               <MaskedReveal progress={scrollYProgress} input={[0.74, 0.80]} output={[50, 0]}>
-                <p className="tracking-[0.2em] uppercase text-sm mb-4 text-amber-200/80">Witness our</p>
+                <p className="tracking-[0.2em] uppercase text-xs md:text-sm mb-2 md:mb-4 text-amber-200/80">Witness our</p>
               </MaskedReveal>
 
               <MaskedReveal progress={scrollYProgress} input={[0.76, 0.82]} output={[80, 0]}>
-                <h2 className="font-serif text-5xl md:text-6xl mb-8 text-amber-50 drop-shadow-md">
+                <h2 className="font-serif text-4xl md:text-6xl mb-4 md:mb-8 text-amber-50 drop-shadow-md">
                   Marriage Muhurtham
                 </h2>
               </MaskedReveal>
 
               <MaskedReveal progress={scrollYProgress} input={[0.78, 0.84]} output={[50, 0]}>
-                <div className="space-y-4 text-amber-50/90 mt-4 flex flex-col items-center w-full">
-                  <p className="text-lg leading-relaxed text-amber-100 font-light mb-6">
+                <div className="space-y-2 md:space-y-4 text-amber-50/90 mt-2 md:mt-4 flex flex-col items-center w-full">
+                  <p className="text-sm md:text-lg leading-relaxed text-amber-100 font-light mb-3 md:mb-6">
                     We request the honor of your presence and blessings as we traditionally tie the knot and step into our new life together.
                   </p>
-                  <p className="font-semibold text-xl text-amber-200">Sunday, June 07, 2026</p>
-                  <p className="text-lg">Morning Auspicious Time</p>
-                  <div className="w-12 h-px bg-amber-700/50 mx-auto my-6"></div>
-                  <p className="text-lg font-medium text-amber-100">Lakshmi Thirumana Nilayam</p>
-                  <p className="text-amber-200/60">26, Villupuram Main Rd, Villianur</p>
+                  <p className="font-semibold text-lg md:text-xl text-amber-200">Sunday, June 07, 2026</p>
+                  <p className="text-sm md:text-lg">Morning Auspicious Time</p>
+                  <div className="w-8 md:w-12 h-px bg-amber-700/50 mx-auto my-3 md:my-6"></div>
+                  <p className="text-base md:text-lg font-medium text-amber-100">Lakshmi Thirumana Nilayam</p>
+                  <p className="text-xs md:text-base text-amber-200/60">26, Villupuram Main Rd, Villianur</p>
                   
-                  {/* Switched to dark theme so the Location button matches the glass */}
-                  <LocationReveal theme="dark" />
+                  <div className="mt-4 md:mt-8 w-full">
+                    <LocationReveal theme="dark" />
+                  </div>
                 </div>
               </MaskedReveal>
             </div>
