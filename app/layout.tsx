@@ -7,7 +7,13 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Vijay Prabhakar & Nivetha - Wedding Invitation",
-  description: "Join us in celebrating our wedding!",
+  description: "Join us on June 6th & 7th, 2026 as we celebrate our wedding and step into our new life together.",
+  openGraph: {
+    title: "Vijay & Nivetha | Wedding Invitation",
+    description: "Join us on June 6th & 7th, 2026 to celebrate our new beginning!",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 export default function RootLayout({
