@@ -126,19 +126,21 @@ const LocationReveal = ({ theme = 'dark' }: { theme?: 'light' | 'dark' }) => {
 };
 
 export default function Home() {
-  // --- Countdown Timer Logic ---
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    // Target: June 6, 2026, 7:30 PM
-    const targetDate = new Date("2026-06-06T19:30:00").getTime();
+    // Target: June 6, 2026, 7:30 PM IST (We add +05:30 to lock it to Indian Standard Time)
+    const targetDate = new Date("2026-06-06T19:30:00+05:30").getTime();
     
     const interval = setInterval(() => {
-      const now = new Date().getTime();
+      // new Date().getTime() automatically gets the current absolute time
+      const now = new Date().getTime(); 
       const distance = targetDate - now;
 
       if (distance < 0) {
         clearInterval(interval);
+        // Optional: You can set all these to 0 when the time passes, or show a "Happening Now!" message
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
 
@@ -149,6 +151,7 @@ export default function Home() {
         seconds: Math.floor((distance % (1000 * 60)) / 1000),
       });
     }, 1000);
+    
     return () => clearInterval(interval);
   }, []);
 
